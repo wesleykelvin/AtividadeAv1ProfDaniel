@@ -1,0 +1,39 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="suporte.Contato"%>
+<%!
+    private List<Contato> getContatos()  {
+        List<Contato> contatos = new ArrayList<Contato>();
+
+        contatos.add(new Contato("Joao", "joaosilva100@gmail,com", 32));
+        contatos.add(new Contato("Aline", "oliveiraaline20@gmail.com", 17));
+        contatos.add(new Contato("Mirian", "miriansouza105@outlook.com", 23));
+        
+        return contatos;
+    }
+%>
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exemplo de Coleções de Objetos</title>
+    </head>
+    <body>
+        <hr>
+        <h4>Exemplo de Coleções de Objetos</h4>
+ 
+        <pre>
+            <% out.println("<hr> vetor simples:");
+                
+                List<Contato> ctts = getContatos();
+                
+                for (Contato ct : ctts)  {                    
+                    out.println("Nome: " + ct.getNome());
+                    out.println("Email: " + ct.getTelefone());
+                    out.println("Idade: " + ct.getIdade());
+                }               
+            %>
+        </pre>
+        <hr>
+    </body>
+</html>
